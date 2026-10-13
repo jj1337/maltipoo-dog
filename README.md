@@ -12,3 +12,6 @@ Then run `~/.maltipoo-dog/dog` and allow Accessibility in System Settings (requi
 Screenshots/screen-capture features need Screen Recording permission.
 
 Settings and chat history stay local in `~/.maltipoo-dog` and are not part of this repo.
+
+## Download
+Prebuilt Apple Silicon binary: see [Releases](../../releases). Unzip and run `./install.sh`.
