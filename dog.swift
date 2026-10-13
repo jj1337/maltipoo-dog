@@ -1,6 +1,15 @@
 import Cocoa
 
 let home = NSHomeDirectory() + "/.maltipoo-dog"
+
+// When launched from Maltipoo.app, seed ~/.maltipoo-dog with the bundled assets (never overwrites user files).
+if let res = Bundle.main.resourcePath, FileManager.default.fileExists(atPath: res + "/gifs") {
+    let fm = FileManager.default
+    try? fm.createDirectory(atPath: home, withIntermediateDirectories: true)
+    for n in ["gifs", "gifs_orig", "dur.json"] where !fm.fileExists(atPath: home + "/" + n) {
+        try? fm.copyItem(atPath: res + "/" + n, toPath: home + "/" + n)
+    }
+}
 let durs: [String: Double] = {
     if let d = try? Data(contentsOf: URL(fileURLWithPath: home + "/dur.json")),
        let j = try? JSONSerialization.jsonObject(with: d) as? [String: Double] { return j }

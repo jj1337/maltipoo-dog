@@ -7,11 +7,13 @@ No API keys, no network code of its own: chat runs through your locally installe
 with the Claude app.
 
 ## Build
-    ./build.sh
-Then run `~/.maltipoo-dog/dog` and allow Accessibility in System Settings (required to detect double-⌘).
+    ./build_app.sh   # produces build/Maltipoo.app
+(or `./build.sh` for a bare binary in `~/.maltipoo-dog`). Allow Accessibility in System Settings (required to detect double-⌘).
 Screenshots/screen-capture features need Screen Recording permission.
 
 Settings and chat history stay local in `~/.maltipoo-dog` and are not part of this repo.
 
 ## Download
-Prebuilt Apple Silicon binary: see [Releases](../../releases). Unzip and run `./install.sh`.
+Grab `Maltipoo.zip` from [Releases](../../releases), unzip, drag **Maltipoo.app** to Applications and open it.
+The app is ad-hoc signed, not notarized: on first launch right-click → Open (or run `xattr -dr com.apple.quarantine /Applications/Maltipoo.app`).
+Then allow Accessibility in System Settings (needed for double-⌘). Apple Silicon, macOS 12+.

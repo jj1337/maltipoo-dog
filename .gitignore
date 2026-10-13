@@ -5,3 +5,4 @@ dialogs.json
 pos.json
 *.bak*
 dog
+build/
